@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zakupy/screen/product_categories_screen.dart';
 import 'package:zakupy/screen/shopping_list_screen.dart';
 
-import '../main.dart';
+import '../widget/my_app_bar.dart';
 
 class TabsScreen extends StatefulWidget {
   static String routeName = '/tabs';
@@ -41,22 +41,7 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: <Color>[Colors.blue, Colors.lightGreenAccent]),
-          ),
-        ),
-        title: Text('Zakupy'),
-        actions: [
-          // TODO dodać dodawanie listy zakupów bądź produktu
-        ],
-        backgroundColor: Theme.of(context).backgroundColor,
-        elevation: 0,
-      ),
+      appBar: MyAppBar('Zakupy'),
       // drawer: MainDrawer(),
       body: _pages[_selectedPageIndex]['page'] as Widget?,
       bottomNavigationBar: BottomNavigationBar(

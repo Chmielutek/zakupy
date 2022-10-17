@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:zakupy/screen/add_shopping_list_screen.dart';
+import 'package:zakupy/screen/populate_shopping_list_screen.dart';
 
+import 'screen/category_products_screen.dart';
 import 'screen/tabs_screen.dart';
 
 void main() {
@@ -40,6 +43,9 @@ class _MyAppState extends State<MyApp> {
       home: TabsScreen(),
       routes: {
         TabsScreen.routeName: (ctx) => TabsScreen(),
+        AddShoppingListScreen.routeName: (ctx) => AddShoppingListScreen(),
+        PopulateShoppingListScreen.routeName: (ctx) => PopulateShoppingListScreen(),
+        CategoryProductsScreen.routeName: (ctx) => CategoryProductsScreen()
       },
     );
   }
